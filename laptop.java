@@ -7,11 +7,11 @@ public class laptop {
    private String  операционнаяСистема;
    private String цвет;
    
-   public laptop (String модель, int объемОЗУ, int объемЖД, String  операционнаяСистема, String цвет;){
+   public laptop (String модель, int объемОЗУ, int объемЖД, String  операционнаяСистема, String цвет){
         this.модель = модель;
         this.объемОЗУ = объемОЗУ;
         this.объемЖД = объемЖД;
-        this.операционнаяСистем = операционнаяСистем;
+        this.операционнаяСистема = операционнаяСистема;
         this.цвет = цвет;
     }
     public String getМодель(){
@@ -28,5 +28,14 @@ public class laptop {
             ", цвет='" + цвет + '\'' +
         '}';
      }
-     
+     public static void main(String[] args) {
+        Set<laptop> ноутбуки = new HashSet<>();
+        ноутбуки.add(new laptop("моедль1", 8, 512, "windows", "черный"));
+        ноутбуки.add(new laptop("модель2", 16, 1024, "MacOS", "серый"));
+
+        // фильтрация по критериям
+        Map<Integer, String> критерии = new HashMap<>();
+        критерии.put(1, "8");
+        критерии.put(2, "16");
+     }
 }
