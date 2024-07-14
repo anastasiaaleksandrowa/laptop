@@ -37,5 +37,13 @@ public class laptop {
         Map<Integer, String> критерии = new HashMap<>();
         критерии.put(1, "8");
         критерии.put(2, "16");
+
+        Scanner scanner = new Scanner(System.in);
+        Map<Integer, String> минимальныеЗначения = new HashMap<>();
+        for (Map.Entry<Integer, String> entry: критерии.entrySet()){
+            System.out.println("введите критерии" + entry.getKey()+"(" + entry.getValue()+ "): ");
+            String minValue = scanner.nextLine();
+            минимальныеЗначения.put(entry.getKey(), minValue);
+        }
      }
 }
