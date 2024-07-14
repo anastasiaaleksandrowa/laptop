@@ -45,5 +45,31 @@ public class laptop {
             String minValue = scanner.nextLine();
             минимальныеЗначения.put(entry.getKey(), minValue);
         }
+
+        for (laptop ноутбук : ноутбуки ){
+            boolean проходитПоУсловиям = true;
+            for (Map.Entry<Integer, String> entry : критерии.entrySet()){
+                int критерий = entry.getKey();
+                String минЗначение = минимальныеЗначения.get(критерий);
+                switch (критерий) {
+                    case 1:
+                        if (ноутбук.объемЖД < Integer.parseInt(минЗначение)) {
+                            проходитПоУсловиям = false;
+                        }
+                        break;
+                    case 2:
+                        if (ноутбук.объемОЗУ < Integer.parseInt(минЗначение)) {
+                            проходитПоУсловиям = false;
+                        }
+                        break;
+                                  
+                    default:
+                        break;
+                }
+            }
+        if (проходитПоУсловиям){
+            System.out.println(ноутбук);
+        }
+        }
      }
 }
